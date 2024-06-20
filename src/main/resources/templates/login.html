@@ -1,14 +1,34 @@
 <!DOCTYPE html>
-<html>
-<link rel="stylesheet" href="/css/login.css"/>
+<html xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" href="../static/css/login.css" type="text/css"/>
 <head>
     <meta charset="UTF-8">
     <title>Registration</title> 
-</head>    
+</head>   
+
 <body>
-    <div class="loginBlock">
-        <button id="loginButton">LOGIN</button>
-        <input id="usernameInputField" type="text" placeholder="Username">
+    <div class="background"></div> 
+    <div class="wrapper colorable">
+        
+        <h1 id="loginMainHeader">Login</h1>
+
+        <div class="Input" >
+            <input type="text" required>
+            <label>Email</label>
+        </div>
+
+        <br>
+
+        <div class="Input">
+            <input type="password" required>
+            <label>Password</label>
+        </div>
+
+        <br>
+
+        <div id="loginButtonDIV">
+            <button id="loginButton" class="colorable">Login</button>
+        </div>
     </div>
 </body>
 </html>
