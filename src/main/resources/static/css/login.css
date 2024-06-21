@@ -19,13 +19,13 @@
   @keyframes animate {
 
 	0% {
-        box-shadow: 0 0 25px gray;
+        box-shadow: 0 0 30px gray;
     }
     50% {
-        box-shadow: 0 0 25px black;
+        box-shadow: 0 0 30px black;
     }
 	100% {
-        box-shadow: 0 0 25px gray;
+        box-shadow: 0 0 30px gray;
     }
   }
 
@@ -40,13 +40,12 @@ body {
 .wrapper {
 	font-family: "Martian Mono", monospace;
 	width: 450px;
-	height: 400px;
+	height: 480px;
 	border: 2px solid rgb(255, 255, 255);
 	box-shadow: 0 0 25px gray;
 	border-radius: 25px;
 	backdrop-filter: blur(50px);
 }
-
 
 
 #loginMainHeader {
@@ -59,10 +58,10 @@ body {
 #loginButton {
 	font-family: "Martian Mono", monospace;
 	position: absolute;
-	bottom: 8%;
-	width: 150px;
-	height: 50px;
-	font-size: 24px;
+	bottom: 15%;
+	width: 400px;
+	height: 60px;
+	font-size: 25px;
 	border-radius: 22px;
 	cursor: pointer;
 	border: none;
@@ -115,4 +114,37 @@ body {
 .Input input:focus~label,
 .Input input:valid~label {
 	top: -5px;
+}
+
+#registerLinkDIV {
+	position: relative;
+	left: 10%;
+	top: 125px;
+}
+
+.registerP {
+	color: rgb(215, 215, 215);
+}
+
+.registerLink {
+	color: rgb(255, 255, 255);
+	text-decoration: none;
+}
+
+#forgotPasswordDIV {
+	position: relative;
+	left: 55%;
+	top: 10px;
+}
+
+.forgotPasswordLink {
+	color: #fff;
+	text-decoration: none;
+}
+
+.loginICONS {
+	position: absolute;
+	width: 30px;
+    height: 30px;
+	right: 1%;
 }
