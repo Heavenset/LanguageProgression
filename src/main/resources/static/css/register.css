@@ -1,17 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Martian+Mono&display=swap');
 
-.background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url(images/wallpaperForMySite.jpg);
-    background-size: 160%;
-    filter: brightness(0.45);
-	z-index: -1;
-}
-
 .colorable:hover {
 	animation: animate 3s infinite ;
 		
@@ -30,12 +18,28 @@
   }
 
 body {
-	
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	min-height: 95vh;
 }
+
+
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+	background-color: black;
+    background-image: url(images/wallpaperForMySite.jpg);
+    background-size: 160%;
+    filter: brightness(0.45);
+	z-index: -1;
+}
+
+
 
 .wrapper {
 	font-family: "Martian Mono", monospace;
@@ -48,37 +52,13 @@ body {
 }
 
 
+
 #registerMainHeader {
 	text-align: center;
 	margin: 35px;
 	color: rgb(255, 255, 255);
 }
 
-#registerButton {
-	font-family: "Martian Mono", monospace;
-	position: absolute;
-	bottom: 5%;
-	width: 400px;
-	height: 60px;
-	font-size: 25px;
-	border-radius: 22px;
-	cursor: pointer;
-	border: none;
-	outline: none;
-	background-color: #ffffff;
-}
-
-#registerButton:active {
-	transform: translateY(5px);
-	background-color: rgb(218, 218, 218);
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
-}
-
-
-#registerButtonDIV {
-	display: flex;
-	justify-content: center;
-}
 
 
 .Input {
@@ -115,6 +95,8 @@ body {
 	top: -5px;
 }
 
+
+
 #registerLinkDIV {
 	position: relative;
 	left: 10%;
@@ -130,12 +112,16 @@ body {
 	text-decoration: none;
 }
 
+
+
 .loginICONS {
 	position: absolute;
 	width: 30px;
     height: 30px;
 	right: 1%;
 }
+
+
 
 #languageLevelOptions {
     position: absolute;
@@ -146,6 +132,9 @@ body {
     cursor: pointer;
     border: none;
 	outline: none;
+    background-color: rgb(41, 41, 41);
+    color: white;
+
 }
 
 .chooseOfALanguageLevelLABEL {
@@ -153,5 +142,31 @@ body {
     color: #fff;
     left: 8%;
     top: 70%;
-    
+}
+
+
+
+#registerButtonDIV {
+	display: flex;
+	justify-content: center;
+}
+
+#registerButton {
+	font-family: "Martian Mono", monospace;
+	position: absolute;
+	bottom: 5%;
+	width: 400px;
+	height: 60px;
+	font-size: 25px;
+	border-radius: 22px;
+	cursor: pointer;
+	border: none;
+	outline: none;
+	background-color: #ffffff;
+}
+
+#registerButton:active {
+	transform: translateY(5px);
+	background-color: rgb(218, 218, 218);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
 }
