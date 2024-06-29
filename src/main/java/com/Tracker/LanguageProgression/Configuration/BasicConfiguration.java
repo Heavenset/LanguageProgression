@@ -11,7 +11,7 @@ public class BasicConfiguration {
     @Bean
     SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 		http.authorizeHttpRequests(requests -> requests
-	            .requestMatchers("/css/**").permitAll()
+	            .requestMatchers("/", "/register", "/css/**", "/images/**").permitAll()
 	            .anyRequest().authenticated()
 	        )
 				.formLogin(formLogin -> formLogin.loginPage("/login").permitAll())
