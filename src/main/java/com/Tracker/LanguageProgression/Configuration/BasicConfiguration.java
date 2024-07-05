@@ -11,10 +11,10 @@ public class BasicConfiguration {
     @Bean
     SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 		http.authorizeHttpRequests(requests -> requests
-	            .requestMatchers("/", "/register", "/css/**", "/images/**").permitAll()
-	            .anyRequest().authenticated()
+	            
+	            .anyRequest().permitAll()
 	        )
-				.formLogin(formLogin -> formLogin.loginPage("/login").permitAll())
+				.formLogin(formLogin -> formLogin.loginPage("/login").defaultSuccessUrl("/").permitAll())
 					.httpBasic(Customizer.withDefaults());
 
 		return http.build();

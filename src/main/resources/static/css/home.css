@@ -10,7 +10,8 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url(../css/images/mainPage_Background.jpg);
+    background-color: #161616;
+    background-image: url(/images/mainPage_Background.jpg);
     background-size: cover;
     filter: brightness(0.7);
     z-index: -1;
@@ -21,15 +22,6 @@ body {
     justify-content: center;
     align-items: center;
     min-height: auto;
-}
-
-.wrapper {
-    position: absolute;
-    top: 140px;
-    right: 150px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
 }
 
 
@@ -74,32 +66,82 @@ body {
     color: #ff6464;
 }
 
-.dropdownMenuDIV {
-    position: absolute; 
-    padding: 10px 10px;
-    margin: 0;
+.menuBUTTON {
+    position: fixed;
+    display: flex;
+    align-items: center;
     right: 30px;
-    top: 30px;
+    top: 25px;
+    font-size: 24px;
+    color: #ffffff;
+    border: none;
+    border-bottom: 3px solid transparent;
+    padding: 5px;
+    padding-left: 2px;
+    border-radius: 15px;
+    background: linear-gradient(45deg, #332f2f, #161616);
+    transition: 0.15s;
+}
+
+.menuBUTTON:hover {
+    border-bottom: 3px solid #ff6464;
+}
+
+/* Connected with .menuBUTTON this part is controlling dropdown menu */
+.dropdownMenuDIV {
+    position: absolute;
+    display: none; 
+    padding: 10px 5px;
+    right: 30px;
+    top: 100px;
     background: linear-gradient(45deg, #332f2f, #161616);
     border-radius: 15px;
-    transition: 0.05s;
-    display: flex;
-    opacity: 0;
-    
+    gap: 10px;
+    transition: 0.15s;
 }
 
 .dropdownMenuItems {
     font-size: 20px;
+    padding: 7px;
     color: #e9e9e9;
     text-decoration: none; 
-    padding-inline: 20px;
     border-radius: 4px;
-    transition: 0.3s;
+    transition: 0.25s;
+    display: none;
+}
+
+.dropdownMenuItems:hover {
+    color: #ff6464;
+}
+
+
+@keyframes smootherAnimation {
+    0% {
+        opacity: 0;
+    }
+    20% {
+        opacity: 0.2;
+    }
+    40% {
+        opacity: 0.4;
+    }
+    60% {
+        opacity: 0.6;
+    }
+    80% {
+        opacity: 0.8;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 .dropdownMenuDIV.dropdownButton-clicked {
-    transition: opacity 0.3s ease-in-out, display 0.3s ease;
-    transform: translateX(120px);
-    display: flex; /* Show when class is toggled */
-    opacity: 1;
+    animation: smootherAnimation 0.2s linear;
+    transition: opacity 0.2s ease-in-out, display 0.2s ease;
+    display: block;
+}
+
+.dropdownMenuDIV.dropdownButton-clicked a {
+    display: inline;
 }

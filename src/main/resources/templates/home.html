@@ -3,25 +3,21 @@
 <head>
     <meta charset='utf-8'>
     <title>Main page</title>
-    <link rel='stylesheet' type='text/css' href="../static/css/home.css">
-    <script src="../static/js/home.js"></script>
+    <link rel='stylesheet' type='text/css' th:href="@{/css/home.css}">
+    <script src="/js/dropDownBUTTON.js"></script>
 </head>
 <body>
     <div class="background"></div> 
 
-    <div class="wrapper">
+    <div class="dropdown">
 
-        <div class="dropdown">
-
-            <div class="menuDIV">
-                <button class="menuBUTTON">
-                <img class="menuIMG" src="../static/css/images/menu.png">Menu
-            </div>
-            <div class="dropdownMenuDIV">
-                <a class="dropdownMenuItems" href="#">Home</a>
-                <a class="dropdownMenuItems" href="profile">Profile</a>
-                <a class="dropdownMenuItems" href="#">Settings</a>
-            </div>
+        <div class="menuDIV">
+            <button class="menuBUTTON">
+            <img class="menuIMG" src="/images/menu.png">Menu
+        </div>
+        <div class="dropdownMenuDIV">
+            <a class="dropdownMenuItems" href="profile">Profile</a>
+            <a class="dropdownMenuItems" href="#">Settings</a>
         </div>
     </div>
 </body>
