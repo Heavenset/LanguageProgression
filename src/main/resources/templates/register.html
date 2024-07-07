@@ -10,11 +10,11 @@
 <body>
     <div class="background"></div> 
     <div class="wrapper colorable">
-        
+        <form class="registerFORM" th:action="@{/register}" method="post">
         <h1 id="registerMainHeader">Register</h1>
         
         <div class="Input" >
-            <input type="text" required>
+            <input name="user_name" type="text" required>
             <label>Username</label>
             <img class="loginICONS" src="/images/user.png">
         </div>
@@ -22,7 +22,7 @@
         <br>
 
         <div class="Input" >
-            <input type="text" required>
+            <input name="email" type="text" required>
             <label>Email</label>
             <img class="loginICONS" src="/images/email.png">
         </div>
@@ -30,7 +30,7 @@
         <br>
 
         <div class="Input">
-            <input type="password" required>
+            <input name="password" type="password" required>
             <label>Password</label>
             <img class="loginICONS" src="/images/lock_closed.png">
         </div>
@@ -56,9 +56,10 @@
             </select>
         </div>
 
-        <div id="registerButtonDIV">
-            <button type="submit" id="registerButton">Register</button>
-        </div>
+            <div id="registerButtonDIV">
+                <button type="submit" id="registerButton">Register</button>
+            </div>
+        </form>
     </div>
 </body>
 </html>
