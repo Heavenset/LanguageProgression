@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.Tracker.LanguageProgression.Entity.User;
 import com.Tracker.LanguageProgression.Repository.UserRepository;
+import com.Tracker.LanguageProgression.Service.RegistrationService;
 
 import lombok.Data;
 
@@ -18,21 +19,26 @@ public class RegisterController {
 	@Autowired
 	private UserRepository userRepository;
 	
+	@Autowired
+	private RegistrationService registrationService;
+	
 	@GetMapping("/register")
 	public String register(){
 		return "register";
 	}
 	
 	@PostMapping("/register")
-    public String registerUser(@RequestParam String userName, @RequestParam String password, @RequestParam String email) {
-        User user = new User();
+    public String redirectRegisteredUser(@RequestParam String userName, @RequestParam String password, @RequestParam String email) {
         
-        user.setUserName(userName);
-        user.setPassword(password);
-        user.setEmail(email);
+		if (registrationService.registerUser(userName, password, email) == true) {
+			System.out.println("User been created succesfully.");
+			return "redirect:/home";
+		}
+		else {
+			System.out.println("User already exist.");
+			return "error";
+		}
         
-        userRepository.save(user);
-        return "redirect:/home";
     }
 
 }
