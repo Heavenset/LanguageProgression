@@ -38,7 +38,7 @@
         <br>
 
         <div class="Input">
-            <input type="password" required>
+            <input name="repeatPassword" type="password" required>
             <label>Repeat password</label>
             <img class="loginICONS" src="/images/lock_repeat.png">
         </div>
@@ -57,7 +57,7 @@
         </div>
 
             <div id="registerButtonDIV">
-                <button type="submit" id="registerButton">Register</button>
+                <button onclick="comparePasswords" type="submit" id="registerButton">Register</button>
             </div>
         </form>
     </div>

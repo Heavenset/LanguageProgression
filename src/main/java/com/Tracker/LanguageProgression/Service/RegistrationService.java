@@ -16,6 +16,7 @@ public class RegistrationService {
 
 		if (userRepository.findByUserName(userName) == null) {
 			User user = new User();
+			
 			user.setUserName(userName);
 			user.setPassword(password);
 			user.setEmail(email);

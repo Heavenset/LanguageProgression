@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.Tracker.LanguageProgression.Entity.User;
 import com.Tracker.LanguageProgression.Repository.UserRepository;
 import com.Tracker.LanguageProgression.Service.RegistrationService;
 
@@ -36,7 +35,7 @@ public class RegisterController {
 		}
 		else {
 			System.out.println("User already exist.");
-			return "error";
+			return "redirect:/register";
 		}
         
     }
