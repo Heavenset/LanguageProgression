@@ -5,6 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Registration</title> 
+    <script src="/js/dropDownBUTTON.js"></script>
 </head>   
 
 <body>
@@ -38,8 +39,9 @@
         <br>
 
         <div class="Input">
-            <input name="repeatPassword" type="password" required>
+            <input name="repeatedPassword" type="password" required>
             <label>Repeat password</label>
+            <label th:if="${password != repeatedPassword}">Passwords must match!</label>
             <img class="loginICONS" src="/images/lock_repeat.png">
         </div>
 
@@ -57,7 +59,7 @@
         </div>
 
             <div id="registerButtonDIV">
-                <button onclick="comparePasswords" type="submit" id="registerButton">Register</button>
+                <button onclick="checkPasswordEquality()" type="submit" id="registerButton">Register</button>
             </div>
         </form>
     </div>
