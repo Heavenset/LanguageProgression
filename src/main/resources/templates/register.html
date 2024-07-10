@@ -2,10 +2,11 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <link rel="stylesheet" type="text/css" href="/css/register.css"/>
 <html>
+    <script src="/js/comparePasswords.js"></script>
 <head>
     <meta charset="UTF-8">
     <title>Registration</title> 
-    <script src="/js/dropDownBUTTON.js"></script>
+    
 </head>   
 
 <body>
@@ -31,17 +32,16 @@
         <br>
 
         <div class="Input">
-            <input name="password" type="password" required>
+            <input name="password" id="password"  type="password" required>
             <label>Password</label>
             <img class="loginICONS" src="/images/lock_closed.png">
         </div>
 
         <br>
 
-        <div class="Input">
-            <input name="repeatedPassword" type="password" required>
-            <label>Repeat password</label>
-            <label th:if="${password != repeatedPassword}">Passwords must match!</label>
+        <div class="Input" id="passwordRepeatDIV">
+            <input name="repeatedPasswordINPUT" id="repeatedPassword" type="password" required>
+            <label id="repeatPasswordLabel" >Repeat password</label>
             <img class="loginICONS" src="/images/lock_repeat.png">
         </div>
 
@@ -59,7 +59,7 @@
         </div>
 
             <div id="registerButtonDIV">
-                <button onclick="checkPasswordEquality()" type="submit" id="registerButton">Register</button>
+                <button type="submit" id="registerButton">Register</button>
             </div>
         </form>
     </div>

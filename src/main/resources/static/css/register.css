@@ -61,12 +61,15 @@ body {
 }
 
 
-
 .Input {
 	position: relative;
 	margin: 20px;
 	border-bottom: 3px solid white;
 
+}
+
+.invalid {
+	border-bottom: 3px solid rgb(125, 8, 8);
 }
 
 .Input input{

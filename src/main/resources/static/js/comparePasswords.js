@@ -1,13 +1,13 @@
-function checkPasswordEquality() {
-    var password = document.getElementById("password").value;
-    var repeatedPassword = document.getElementById("repeatPassword").value;
-    var message = document.getElementById("message");
+document.addEventListener("DOMContentLoaded", function() {
+    const password = document.getElementById("password");
+    const repeatedPasswordINPUT = document.getElementById("repeatedPasswordINPUT");
+    const registerButton = document.getElementById("registerButton");
 
-    if (password === repeatedPassword) {
-        message.style.color = "green";
-        console.log("yes")
-    } else {
-        message.style.color = "red";
-        console.log("no")
-    }
-}
+    registerButton.addEventListener("click", function(event) {
+        if (password.value !== repeatedPasswordINPUT.value) {
+            event.preventDefault(); // Prevent form submission
+            
+            alert("Passwords must match!");
+        }
+    });
+});
