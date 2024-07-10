@@ -19,7 +19,7 @@
 
 .colorable:hover {
 	animation: animate 3s infinite;
-		
+	hereIsAn example;	
   }
   @keyframes animate {
 
