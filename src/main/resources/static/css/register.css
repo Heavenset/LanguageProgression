@@ -69,7 +69,15 @@ body {
 }
 
 .invalid {
-	border-bottom: 3px solid rgb(125, 8, 8);
+	transition:  0.3s ease;
+	border-bottom: 3px solid rgb(162, 1, 1);
+	color: rgb(162, 1, 1);
+}
+
+.valid {
+	transition:  0.3s ease;
+	border-bottom: 3px solid rgb(1, 162, 73);
+	color: rgb(1, 162, 73);;
 }
 
 .Input input{
@@ -77,10 +85,14 @@ body {
 	height: 40px;
 	font-size: 16px;
 	color: white;
+	transition: border-bottom 0.3s ease;
 	padding: 0 10px;
 	background: transparent;
 	border: none;
 	outline: none;
+}
+#repeatPasswordLabel {
+	transition: color 0.3s ease;
 }
 
 .Input label {
@@ -91,7 +103,7 @@ body {
 	font-size: 18px;
 	color: #fff;
 	pointer-events: none;
-	transition: .3s;
+	transition: 0.3s ease;
 }
 
 .Input input:focus~label,

@@ -1,13 +1,23 @@
 document.addEventListener("DOMContentLoaded", function() {
     const password = document.getElementById("password");
-    const repeatedPasswordINPUT = document.getElementById("repeatedPasswordINPUT");
-    const registerButton = document.getElementById("registerButton");
+    const repeatedPassword = document.getElementById("repeatedPassword");
+    const passwordRepeatDIV = document.getElementById("passwordRepeatDIV");
+    const repeatPasswordLabel = document.getElementById("repeatPasswordLabel");
 
-    registerButton.addEventListener("click", function(event) {
-        if (password.value !== repeatedPasswordINPUT.value) {
-            event.preventDefault(); // Prevent form submission
+    function checkPasswords() {
+        if (password.value === repeatedPassword.value) {
+            passwordRepeatDIV.classList.remove("invalid");
+            passwordRepeatDIV.classList.add("valid");
+            repeatPasswordLabel.innerText = "Correct";
             
-            alert("Passwords must match!");
+        } else {
+            passwordRepeatDIV.classList.remove("valid");
+            passwordRepeatDIV.classList.add("invalid");
+            repeatPasswordLabel.innerText = "Passwords must match!";
         }
-    });
+    }    
+
+    password.onkeyup = checkPasswords;
+    repeatedPassword.onkeyup = checkPasswords;
+
 });
