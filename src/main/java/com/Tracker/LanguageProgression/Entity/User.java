@@ -1,5 +1,10 @@
 package com.Tracker.LanguageProgression.Entity;
 
+import java.util.Collection;
+
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -12,17 +17,21 @@ import lombok.Data;
 @Entity
 @Data
 @Table(name="users")
-public class User{
+public class User implements UserDetails{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private long id;
 	
-	private String userName;
+	private String username;
 	private String password;
 	private String email;
 	
 	@Enumerated(EnumType.STRING)
 	private Role role;
 
+	@Override
+	public Collection<? extends GrantedAuthority> getAuthorities() {
+		return null;
+	}
 }

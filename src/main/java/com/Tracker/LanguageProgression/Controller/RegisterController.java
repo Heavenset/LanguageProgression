@@ -27,12 +27,12 @@ public class RegisterController {
 	}
 
 	@PostMapping("/register")
-	public String redirectRegisteredUser(@RequestParam String userName,
+	public String redirectRegisteredUser(@RequestParam String username,
 			@RequestParam String password, @RequestParam String email, @RequestParam String repeatedPasswordINPUT) {
 
 		// Allowing to create profile and then redirect 
 		// 		if the name does not exist in database. 
-		if (registrationService.registerUser(userName, password, email) == true && password.equals(repeatedPasswordINPUT)) {
+		if (registrationService.registerUser(username, password, email) == true && password.equals(repeatedPasswordINPUT)) {
 			System.out.println("User been created succesfully.");
 			
 			return "redirect:/home";

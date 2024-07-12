@@ -15,14 +15,14 @@ public class RegistrationService {
 	
 	@Autowired PasswordEncoder passwordEncoder;
 
-	public boolean registerUser(String userName, String password, String email) {
+	public boolean registerUser(String username, String password, String email) {
 
-		if (userRepository.findByUserName(userName) == null) {
+		if (userRepository.findByUsername(username) == null) {
 			User user = new User();
 			
 			String encodedPassword = passwordEncoder.encode(password);
 			
-			user.setUserName(userName);
+			user.setUsername(username);
 			user.setPassword(encodedPassword);
 			user.setEmail(email);
 
