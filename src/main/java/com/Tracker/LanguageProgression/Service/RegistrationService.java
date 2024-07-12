@@ -13,7 +13,8 @@ public class RegistrationService {
 	@Autowired
 	private UserRepository userRepository;
 	
-	@Autowired PasswordEncoder passwordEncoder;
+	@Autowired 
+	PasswordEncoder passwordEncoder;
 
 	public boolean registerUser(String username, String password, String email) {
 
